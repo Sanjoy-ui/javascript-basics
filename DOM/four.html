@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM </title>
+</head>
+<body style="background-color: #414141; color: #fff;">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+       const li = document.createElement("li") ;
+       li.innerHTML = `${langName}`;
+       document.querySelector(".language").appendChild(li)
+    }
+    // addLanguage("Ruby on Rails");
+    // addLanguage("Ruby on Rails");
+
+    function addOptiLang (langName){
+        const li = document.createElement("li");
+        const addText = document.createTextNode(langName);
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector(".language").appendChild(li)
+    }
+
+    addOptiLang("java");
+
+    // edit
+
+    const secondLanguage = document.querySelector("li:nth-child(2)");
+    secondLanguage.innerHTML = "Mojo";          // works but it is not optimized
+
+    const newLi = document.createElement("li");
+    newLi.textContent = "Golang";
+    secondLanguage.replaceWith(newLi)
+
+
+    const firstlang = document.querySelector("li:first-child");
+    firstlang.outerHTML ='<li>typescript</li>';
+
+
+    // remove
+
+    const lastchild = document.querySelector('li:last-child');
+    lastchild.remove()
+</script>
+</html>
