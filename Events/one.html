@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Javascript best series</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    const start = document.getElementById("start");
+    const stop = document.getElementById("stop");
+    const name = "sanjoy deb";
+    let intervalId ;
+
+    start.addEventListener("click" , (e)=>{
+         intervalId = setInterval(()=>{
+            console.log(name);
+        },1000 , name)
+    })
+
+    stop.addEventListener("click" , (e)=>{
+        clearInterval(intervalId);
+    })
+</script>
+</html>
